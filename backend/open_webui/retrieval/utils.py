@@ -566,6 +566,7 @@ def generate_openai_batch_embeddings(
                 ),
             },
             json={"input": texts, "model": model},
+            timeout=300.00,
         )
         r.raise_for_status()
         data = r.json()
